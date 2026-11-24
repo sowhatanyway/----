@@ -1,0 +1,6 @@
+{
+  "name": "TAMBURINS Official Fragrance Showcase",
+  "description": "탬버린즈 공식 시그니처 쇼케이스 - 컬러 안개 미스트 스프레이, AI 인상 향수 매칭, 인터랙티브 센트 캔버스",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

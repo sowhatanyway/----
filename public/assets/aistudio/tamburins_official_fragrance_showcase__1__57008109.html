@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TAMBURINS | 탬버린즈 공식 시그니처 쇼케이스</title>
+  
+  <!-- Fonts: Cormorant Garamond, Pretendard, Playfair Display, Bodoni Moda -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;1,6..96,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Pretendard:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBg: '#F5F4EF',
+            brandCard: '#EFECE6',
+            brandDark: '#171717',
+            brandAccent: '#800020',
+            brandGold: '#D4AF37',
+            chamoMist: '#E3B06C',
+            pumkiniMist: '#E87D3E',
+            eveningMist: '#C94E6B',
+            metalMist: '#7DA1A4'
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Pretendard', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F5F4EF;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #CCCCCC;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #171717;
+    }
+
+    body {
+      background-color: #F5F4EF;
+      color: #171717;
+      font-family: 'Pretendard', sans-serif;
+      overflow-x: hidden;
+      user-select: none;
+    }
+
+    /* Word Break for Korean Legibility */
+    .break-keep {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* Film Reel Frame Styling */
+    .film-frame {
+      position: relative;
+      border: 1px solid rgba(23, 23, 23, 0.15);
+      background: #EAE6DF;
+      box-shadow: inset 0 0 50px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .film-grain {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle, transparent 50%, rgba(245, 244, 239, 0.4) 100%);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+    }
+
+    @keyframes floatSoft {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(0.5deg); }
+    }
+    .animate-float {
+      animation: floatSoft 6s ease-in-out infinite;
+    }
+
+    /* Compact, Two-Line High-Contrast Animated Spray Text Overlay */
+    .spray-text {
+      position: absolute;
+      pointer-events: none;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-align: center;
+      white-space: nowrap;
+      z-index: 30;
+      color: #171717;
+      text-shadow: 
+        0 2px 10px rgba(255, 255, 255, 0.95),
+        0 0 20px rgba(255, 255, 255, 0.85),
+        0 1px 3px rgba(0, 0, 0, 0.2);
+      animation: floatTextUp 3.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @media (max-width: 640px) {
+      .spray-text {
+        font-size: 0.9rem;
+        line-height: 1.35;
+      }
+    }
+
+    /* Selected Serif Font Classes for Spray Overlay */
+    .font-chamo { font-family: 'Playfair Display', serif; font-weight: 700; }
+    .font-pumkini { font-family: 'Playfair Display', serif; font-weight: 700; }
+    .font-evening { font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; }
+    .font-metal { font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 600; }
+
+    @keyframes floatTextUp {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 15px) scale(0.92);
+        filter: blur(8px);
+      }
+      18% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translate(-50%, -8px) scale(1.02);
+      }
+      82% {
+        opacity: 0.98;
+        transform: translate(-50%, -40px) scale(1.03);
+        filter: blur(0px);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -70px) scale(1.08);
+        filter: blur(10px);
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Navigation Header -->
+  <header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-brandBg/85 backdrop-blur-md border-b border-black/5 transition-all">
+    <div class="flex items-center space-x-3">
+      <span class="font-serif text-2xl font-semibold tracking-widest text-brandDark">TAMBURINS</span>
+      <span class="text-[10px] tracking-widest px-2 py-0.5 border border-brandDark/20 uppercase rounded-full hidden sm:inline-block">Official Collection</span>
+    </div>
+    
+    <nav class="hidden md:flex space-x-8 text-xs tracking-widest font-medium uppercase text-brandDark/70">
+      <a href="#hero" class="hover:text-brandDark transition-colors">Olfactory Narrative</a>
+      <a href="#scent-finder" class="hover:text-brandDark transition-colors">Scent Finder</a>
+      <a href="#ai-face-matcher" class="hover:text-brandDark transition-colors">AI Face Matcher</a>
+      <a href="#products" class="hover:text-brandDark transition-colors">Sculptural Collection</a>
+      <a href="#glitter" class="hover:text-brandDark transition-colors">Scent Canvas</a>
+    </nav>
+
+    <div class="flex items-center space-x-4">
+      <button id="soundToggleBtn" class="flex items-center space-x-2 text-xs tracking-wider uppercase border border-brandDark/30 px-3.5 py-1.5 rounded-full hover:bg-brandDark hover:text-white transition-all">
+        <span id="soundIcon">🔊</span>
+        <span id="soundLabel">Sound On</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- SECTION 1: HERO - FILM REEL & COLORED MIST SPRAY INTERACTION -->
+  <section id="hero" class="relative min-h-screen pt-28 pb-16 px-4 md:px-12 flex flex-col justify-center items-center overflow-hidden">
+    
+    <div class="text-center z-20 max-w-3xl mb-6">
+      <p class="text-xs tracking-[0.3em] text-brandDark/60 uppercase mb-2">Interactive Spray Experience</p>
+      <h1 class="font-serif text-4xl md:text-6xl text-brandDark font-light tracking-tight leading-tight mb-3">
+        Sensory Mist & Emotional Narrative
+      </h1>
+      <p class="text-xs md:text-sm text-brandDark/70 font-light max-w-xl mx-auto leading-relaxed break-keep">
+        화면 안쪽을 클릭하면 탬버린즈의 대표 향수가 고유의 <strong class="font-medium text-brandDark">컬러 안개 미스트</strong>로 분사되며,<br class="hidden sm:inline">
+        손끝에서 피어나는 감정의 서사가 텍스트와 사운드로 연출됩니다.
+      </p>
+
+      <!-- Scent Selector Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 md:gap-3 mt-6">
+        <button onclick="selectScent('chamo')" id="tab-chamo" class="scent-tab active-tab px-4 py-2 text-xs font-medium tracking-wider uppercase rounded-full border transition-all flex items-center gap-2 bg-brandDark text-white border-brandDark">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#E3B06C]"></span> CHAMO (카모)
+        </button>
+        <button onclick="selectScent('pumkini')" id="tab-pumkini" class="scent-tab px-4 py-2 text-xs font-medium tracking-wider uppercase rounded-full border border-black/20 text-brandDark/80 hover:border-black transition-all flex items-center gap-2 bg-white/60">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#E87D3E]"></span> PUMKINI (펌키니)
+        </button>
+        <button onclick="selectScent('evening')" id="tab-evening" class="scent-tab px-4 py-2 text-xs font-medium tracking-wider uppercase rounded-full border border-black/20 text-brandDark/80 hover:border-black transition-all flex items-center gap-2 bg-white/60">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#C94E6B]"></span> EVENING GLOW (이브닝글로우)
+        </button>
+        <button onclick="selectScent('metal')" id="tab-metal" class="scent-tab px-4 py-2 text-xs font-medium tracking-wider uppercase rounded-full border border-black/20 text-brandDark/80 hover:border-black transition-all flex items-center gap-2 bg-white/60">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#7DA1A4]"></span> HOLY METAL (홀리메탈)
+        </button>
+      </div>
+    </div>
+
+    <!-- Cinematic Film Viewport (Clickable Canvas Area) -->
+    <div id="sprayArea" class="film-frame relative w-full max-w-5xl h-[500px] rounded-2xl cursor-pointer group shadow-2xl transition-all duration-500">
+      
+      <!-- Colored Mist Canvas -->
+      <canvas id="mistCanvas" class="absolute inset-0 w-full h-full z-10 pointer-events-none"></canvas>
+
+      <!-- Grain Overlay -->
+      <div class="film-grain"></div>
+
+      <!-- Center Display -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center z-0 p-6 text-center select-none">
+        
+        <div id="scentVisualBox" class="w-44 h-44 md:w-52 md:h-52 relative mb-4 transition-all duration-700 animate-float">
+          <div id="heroSvgContainer" class="w-full h-full flex items-center justify-center filter drop-shadow-xl"></div>
+        </div>
+
+        <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/80 border border-black/10 backdrop-blur-sm text-[11px] uppercase tracking-widest text-brandDark/80 mb-2">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          <span id="scentBadge">CHAMO | Amber Chamomile Mist</span>
+        </div>
+        <p class="text-xs font-serif italic text-brandDark/50 tracking-wider">Tap anywhere inside to spray colored mist</p>
+      </div>
+
+      <div class="absolute top-3 left-4 right-4 flex justify-between z-20 pointer-events-none opacity-40">
+        <span class="text-[10px] font-mono tracking-widest text-brandDark">TAMBURINS 35MM REEL #04</span>
+        <span id="timecode" class="text-[10px] font-mono tracking-widest text-brandDark">00:00:14:02</span>
+      </div>
+      <div class="absolute bottom-3 left-4 right-4 flex justify-between z-20 pointer-events-none opacity-40">
+        <span class="text-[10px] font-mono tracking-widest text-brandDark">CINETECH COLORED MIST FX</span>
+        <span class="text-[10px] font-mono tracking-widest text-brandDark">FPS 60.0</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SCENT FINDER - 3-STEP PREFERENCE QUIZ -->
+  <section id="scent-finder" class="py-24 px-6 md:px-12 bg-[#EFECE6]/60 border-t border-black/5">
+    <div class="max-w-4xl mx-auto">
+      
+      <div class="text-center mb-12">
+        <span class="text-xs tracking-[0.3em] text-brandDark/60 uppercase block mb-2">Interactive Quiz</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-brandDark font-light">
+          Scent Finder : 취향 맞춤 향수 탐색
+        </h2>
+        <p class="text-xs md:text-sm text-brandDark/70 mt-3 max-w-lg mx-auto leading-relaxed break-keep">
+          3가지 감각 질문에 답변해 주세요. 당신의 분위기와 잔향 취향에 어울리는 탬버린즈 대표 시그니처 향수를 추천해 드립니다.
+        </p>
+      </div>
+
+      <!-- Quiz Card Container -->
+      <div id="quizContainer" class="glass-card max-w-3xl mx-auto p-8 md:p-12 rounded-3xl shadow-xl border border-black/10 transition-all">
+        
+        <!-- Step Indicator Header -->
+        <div id="quizHeader" class="flex justify-between items-center mb-8 border-b border-black/10 pb-4">
+          <span id="stepCounter" class="text-xs font-mono tracking-widest uppercase text-brandDark/60">STEP 1 / 3</span>
+          <div class="flex space-x-1.5">
+            <span id="dot-1" class="w-2.5 h-2.5 rounded-full bg-brandDark transition-all"></span>
+            <span id="dot-2" class="w-2.5 h-2.5 rounded-full bg-black/20 transition-all"></span>
+            <span id="dot-3" class="w-2.5 h-2.5 rounded-full bg-black/20 transition-all"></span>
+          </div>
+        </div>
+
+        <!-- Question 1 -->
+        <div id="quizStep1" class="quiz-step transition-all duration-300">
+          <h3 class="font-serif text-2xl md:text-3xl text-brandDark mb-6 font-light break-keep">
+            Q1. 머물고 싶은 이상적인 공간의 분위기는?
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onclick="answerQuiz(1, 'chamo')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option A</span>
+              <span class="font-medium text-sm block break-keep">따스한 햇살이 드는 아늑한 목조 서재</span>
+              <span class="text-xs text-brandDark/60 group-hover:text-white/80 mt-1 block break-keep">카모마일의 은은함과 목재의 온기 있는 안식</span>
+            </button>
+            <button onclick="answerQuiz(1, 'pumkini')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option B</span>
+              <span class="font-medium text-sm block break-keep">비 온 뒤 푸르름이 감도는 비밀 정원</span>
+              <span class="text-xs text-brandDark/60 group-hover:text-white/80 mt-1 block break-keep">차조기잎의 푸르름과 하얀 호박의 반전 매력</span>
+            </button>
+            <button onclick="answerQuiz(1, 'evening')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option C</span>
+              <span class="font-medium text-sm block break-keep">붉은 노을로 물드는 해질녘의 테라스</span>
+              <span class="text-xs text-brandDark/60 group-hover:text-white/80 mt-1 block break-keep">매혹적인 로즈 향과 라즈베리의 몽환적 오라</span>
+            </button>
+            <button onclick="answerQuiz(1, 'metal')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option D</span>
+              <span class="font-medium text-sm block break-keep">시간이 멈춘 듯 차갑고 고요한 대리석 성전</span>
+              <span class="text-xs text-brandDark/60 group-hover:text-white/80 mt-1 block break-keep">측백나무 잎과 메탈릭 세이지의 신성한 정적</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="quizStep2" class="quiz-step hidden transition-all duration-300">
+          <h3 class="font-serif text-2xl md:text-3xl text-brandDark mb-6 font-light break-keep">
+            Q2. 오랫동안 기억하고 싶은 잔상의 시간대는?
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onclick="answerQuiz(2, 'chamo')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option A</span>
+              <span class="font-medium text-sm block break-keep">선선한 가을 바람이 불어오는 나른한 오후</span>
+            </button>
+            <button onclick="answerQuiz(2, 'pumkini')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option B</span>
+              <span class="font-medium text-sm block break-keep">이슬 젖은 새벽 공기가 피어나는 비밀스러운 순간</span>
+            </button>
+            <button onclick="answerQuiz(2, 'evening')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option C</span>
+              <span class="font-medium text-sm block break-keep">해가 지는 붉은 황혼의 트와일라잇</span>
+            </button>
+            <button onclick="answerQuiz(2, 'metal')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option D</span>
+              <span class="font-medium text-sm block break-keep">서늘하고 맑은 겨울 성전의 대기</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="quizStep3" class="quiz-step hidden transition-all duration-300">
+          <h3 class="font-serif text-2xl md:text-3xl text-brandDark mb-6 font-light break-keep">
+            Q3. 끌리는 메인 잔향 노트는?
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <button onclick="answerQuiz(3, 'chamo')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option A</span>
+              <span class="font-medium text-sm block break-keep">부드러운 카모마일 & 은은한 블론드 우드</span>
+            </button>
+            <button onclick="answerQuiz(3, 'pumkini')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option B</span>
+              <span class="font-medium text-sm block break-keep">스파이시 진저 & 은밀한 코코넛 밀크</span>
+            </button>
+            <button onclick="answerQuiz(3, 'evening')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option C</span>
+              <span class="font-medium text-sm block break-keep">라즈베리 & 묵직한 패출리 장미 앰버</span>
+            </button>
+            <button onclick="answerQuiz(3, 'metal')" class="p-5 text-left rounded-2xl border border-black/10 bg-white/70 hover:bg-brandDark hover:text-white transition-all group">
+              <span class="block text-xs font-mono uppercase text-brandDark/40 group-hover:text-white/60 mb-1">Option D</span>
+              <span class="font-medium text-sm block break-keep">금속성 알데하이드 & 깔끔한 백머스크</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quiz Result Screen -->
+        <div id="quizResult" class="quiz-step hidden transition-all duration-500 text-center">
+          <div class="inline-block px-4 py-1 rounded-full bg-brandDark text-white text-[11px] font-mono uppercase tracking-widest mb-4">
+            Match Score: <span id="matchPercent">98%</span>
+          </div>
+          
+          <div id="resultSvgContainer" class="w-40 h-40 mx-auto my-4 filter drop-shadow-lg"></div>
+
+          <span id="resultSubtitle" class="text-xs uppercase tracking-widest text-brandDark/50 block font-mono">Recommended Fragrance</span>
+          <h3 id="resultTitle" class="font-serif text-4xl text-brandDark font-medium my-1">CHAMO</h3>
+          
+          <p id="resultDesc" class="text-xs md:text-sm text-brandDark/80 max-w-lg mx-auto leading-relaxed my-4 font-light break-keep">
+            진득한 카모마일의 약초 향과 쌉싸래한 클라리세이지가 오묘한 조화를 이루며, 차가운 이끼를 따스한 블론드 우드로 감싸주는 안식의 향.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
+            <button id="sprayMatchedBtn" class="px-6 py-3 bg-brandDark text-white text-xs tracking-wider uppercase rounded-full hover:bg-black transition-all shadow-md">
+              ✨ 이 향 상단에서 분사해보기 (Spray This Scent)
+            </button>
+            <button onclick="resetQuiz()" class="px-6 py-3 border border-black/20 text-brandDark text-xs tracking-wider uppercase rounded-full hover:bg-black/5 transition-all">
+              🔄 다시 테스트하기
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: AI FACE IMPRESSION ANALYSIS -->
+  <section id="ai-face-matcher" class="py-24 px-6 md:px-12 max-w-5xl mx-auto border-t border-black/10">
+    <div class="text-center mb-12">
+      <span class="text-xs tracking-[0.3em] text-brandDark/60 uppercase block mb-2">Visual Aura Analytics</span>
+      <h2 class="font-serif text-3xl md:text-5xl text-brandDark font-light">
+        AI Face & Aura Fragrance Matcher
+      </h2>
+      <p class="text-xs md:text-sm text-brandDark/70 mt-3 max-w-lg mx-auto leading-relaxed break-keep">
+        얼굴 사진을 업로드하시면 AI가 이목구비의 온도감, 선의 형태, 분위기 아우라를 정밀 분석하여<br class="hidden sm:inline">
+        당신의 본연의 인상에 완벽하게 조화되는 탬버린즈 향수를 찾아드립니다.
+      </p>
+    </div>
+
+    <div class="glass-card p-8 md:p-12 rounded-3xl shadow-xl border border-black/10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Left: Image Upload & Scanner View -->
+        <div class="flex flex-col items-center">
+          <div id="uploadDropzone" onclick="document.getElementById('faceInput').click()" class="relative w-full h-80 rounded-2xl border-2 border-dashed border-black/20 hover:border-black/50 bg-white/40 flex flex-col items-center justify-center p-4 cursor-pointer transition-all overflow-hidden group">
+            
+            <input type="file" id="faceInput" accept="image/*" class="hidden" onchange="handleFaceUpload(event)">
+            
+            <!-- Default Placeholder UI -->
+            <div id="uploadPlaceholder" class="text-center transition-all group-hover:scale-105">
+              <div class="w-16 h-16 rounded-full bg-brandDark/5 flex items-center justify-center mx-auto mb-4 text-2xl text-brandDark/60">
+                📷
+              </div>
+              <p class="text-sm font-medium text-brandDark mb-1">얼굴 사진 업로드 또는 드래그</p>
+              <p class="text-xs text-brandDark/50">정면이 잘 보이는 조명 좋은 사진을 권장합니다.</p>
+            </div>
+
+            <!-- Image Preview & Scan Animation Container -->
+            <div id="previewContainer" class="hidden absolute inset-0 w-full h-full bg-black/5">
+              <img id="facePreviewImg" src="" alt="Face Preview" class="w-full h-full object-cover rounded-2xl">
+              
+              <!-- Scanning Laser Overlay Line -->
+              <div id="scanOverlay" class="hidden absolute inset-0 bg-gradient-to-b from-transparent via-[#D4AF37]/30 to-transparent border-b-2 border-brandGold animate-pulse"></div>
+              
+              <div id="scanStatusBadge" class="hidden absolute top-4 left-4 right-4 bg-black/70 backdrop-blur-md text-white text-[11px] font-mono py-1.5 px-3 rounded-full flex items-center justify-between shadow-lg">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span id="scanStatusText">얼굴 윤곽 분석 중...</span>
+                </span>
+                <span id="scanProgress">0%</span>
+              </div>
+            </div>
+
+          </div>
+          
+          <button id="reuploadBtn" onclick="document.getElementById('faceInput').click()" class="hidden mt-4 text-xs font-mono uppercase tracking-wider text-brandDark/60 hover:text-brandDark underline">
+            다른 사진으로 다시 분석하기
+          </button>
+        </div>
+
+        <!-- Right: Impression Score & Recommendation Results -->
+        <div>
+          <!-- Initial State Guide -->
+          <div id="analysisInitialState" class="text-center md:text-left py-8">
+            <h4 class="font-serif text-2xl text-brandDark/40 mb-2 font-light">Aura Analysis Pending</h4>
+            <p class="text-xs text-brandDark/60 leading-relaxed break-keep">
+              왼쪽 영역에 사진을 등록해 주세요. AI가 당신의 인상 키워드(Warmth, Coolness, Elegance)를 측정하여 본연의 분위기와 어우러지는 향수를 산출해냅니다.
+            </p>
+          </div>
+
+          <!-- Analysis Results Content -->
+          <div id="analysisResultContainer" class="hidden space-y-6">
+            <div>
+              <span class="text-[10px] font-mono tracking-widest text-brandDark/50 uppercase block mb-1">Impression Analysis Score</span>
+              <h4 id="faceImpressionTitle" class="font-serif text-2xl text-brandDark font-medium break-keep">따스하고 이지적인 아우라</h4>
+            </div>
+
+            <!-- Metrics Bars -->
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-brandDark/70">Warmth & Softness (온도감)</span>
+                  <span id="scoreWarmth" class="font-semibold text-brandDark">88%</span>
+                </div>
+                <div class="w-full bg-black/10 h-1.5 rounded-full overflow-hidden">
+                  <div id="barWarmth" class="bg-[#E3B06C] h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-brandDark/70">Elegance & Depth (우아함)</span>
+                  <span id="scoreElegance" class="font-semibold text-brandDark">92%</span>
+                </div>
+                <div class="w-full bg-black/10 h-1.5 rounded-full overflow-hidden">
+                  <div id="barElegance" class="bg-[#C94E6B] h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-mono mb-1">
+                  <span class="text-brandDark/70">Coolness & Crispness (청량감)</span>
+                  <span id="scoreCoolness" class="font-semibold text-brandDark">65%</span>
+                </div>
+                <div class="w-full bg-black/10 h-1.5 rounded-full overflow-hidden">
+                  <div id="barCoolness" class="bg-[#7DA1A4] h-full rounded-full transition-all duration-1000" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Perfume Recommendation Summary Card -->
+            <div class="p-4 rounded-2xl bg-white/80 border border-black/10 flex items-center space-x-4">
+              <div id="aiScentSvg" class="w-16 h-16 flex-shrink-0"></div>
+              <div>
+                <span class="text-[10px] font-mono tracking-widest text-brandDark/50 uppercase">Best Matched Perfume</span>
+                <h5 id="aiScentName" class="font-serif text-xl font-bold text-brandDark">CHAMO</h5>
+                <p id="aiScentDesc" class="text-xs text-brandDark/70 mt-0.5 break-keep">진득한 카모마일과 온기 있는 블론드 우드가 감싸 안아 당신의 인상을 극대화합니다.</p>
+              </div>
+            </div>
+
+            <button id="aiSprayBtn" class="w-full py-3.5 bg-brandDark text-white text-xs tracking-wider uppercase rounded-full hover:bg-black transition-all shadow-md flex items-center justify-center gap-2">
+              <span>✨ 이 향으로 히어로 미스트 분사하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: OFFICIAL TAMBURINS PRODUCTS (NO TEXT TRUNCATION) -->
+  <section id="products" class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-black/10 pb-6">
+      <div>
+        <span class="text-xs tracking-[0.3em] text-brandDark/60 uppercase block mb-2">Official Verified Collection</span>
+        <h2 class="font-serif text-3xl md:text-5xl text-brandDark font-light">
+          Sculptural Collection
+        </h2>
+      </div>
+      <p class="text-xs tracking-wider text-brandDark/70 max-w-md mt-4 md:mt-0 leading-relaxed break-keep">
+        탬버린즈의 시그니처 <strong>에그 퍼퓸(Egg Perfume)</strong>과 <strong>쉘 퍼퓸 핸드(Shell Perfume Hand)</strong>,<br>
+        그리고 <strong>조각 오브제 퍼퓸 바틀</strong>의 정교한 미학과 원료 노트를 확인하세요.
+      </p>
+    </div>
+
+    <!-- Product Grid: Flexible heights, no text clipping -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+
+      <!-- ITEM 1: CHAMO (EGG PERFUME 14ml) -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#EAE7DF] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-44 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 200 260" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="100" cy="240" rx="60" ry="12" fill="rgba(0,0,0,0.12)" />
+                <path d="M100,20 C145,20 175,70 175,140 C175,200 145,230 100,230 C55,230 25,200 25,140 C25,70 55,20 100,20 Z" fill="#F4F1EA" stroke="#D1CCC1" stroke-width="2" />
+                <path d="M70,40 C110,35 150,70 150,130" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="8" stroke-linecap="round" />
+                <rect x="82" y="10" width="36" height="18" rx="4" fill="#222222" />
+                <rect x="85" y="6" width="30" height="6" rx="2" fill="#444444" />
+                <text x="100" y="150" font-family="Cormorant Garamond" font-size="14" fill="#171717" text-anchor="middle" font-weight="600" letter-spacing="2">TAMBURINS</text>
+                <text x="100" y="170" font-family="Pretendard" font-size="10" fill="#666666" text-anchor="middle" letter-spacing="1">CHAMO</text>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#E3B06C]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Chamomile & Honeyed Sage</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Signature Egg Perfume</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">CHAMO (카모)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">14 mL</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              진득한 카모마일의 약초 향과 쌉싸래한 클라리세이지의 허브 향이 오묘한 조화를 이루며, 차가운 이끼의 기운을 따스한 블론드 우드와 부드러운 머스크로 감싸주는 탬버린즈의 대표 시그니처 안식의 향.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Top:</span><span>Clary Sage, Chamomile</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Middle:</span><span>Water, Cypriol</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Base:</span><span>Amber, Musk, Blonde Wood</span></div>
+        </div>
+      </div>
+
+      <!-- ITEM 2: PUMKINI (PERFUME 50ml) -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#E8E3D8] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-40 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 200 260" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="100" cy="245" rx="55" ry="10" fill="rgba(0,0,0,0.15)" />
+                <rect x="45" y="70" width="110" height="160" rx="8" fill="rgba(255, 255, 255, 0.85)" stroke="#D6D0C4" stroke-width="2" />
+                <rect x="50" y="95" width="100" height="130" rx="4" fill="rgba(232, 125, 62, 0.25)" />
+                <rect x="60" y="110" width="80" height="70" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1" />
+                <text x="100" y="138" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="700" letter-spacing="1">TAMBURINS</text>
+                <text x="100" y="156" font-family="Pretendard" font-size="9" fill="#E87D3E" text-anchor="middle" font-weight="600" letter-spacing="1">PUMKINI</text>
+                <text x="100" y="168" font-family="Pretendard" font-size="7" fill="#888888" text-anchor="middle">PERFUME 50mL</text>
+                <rect x="80" y="25" width="40" height="40" rx="4" fill="url(#silverGrad)" stroke="#B0B0B0" stroke-width="1" />
+                <rect x="88" y="65" width="24" height="6" fill="#777777" />
+                <defs>
+                  <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#E6E6E6" />
+                    <stop offset="50%" stop-color="#FFFFFF" />
+                    <stop offset="100%" stop-color="#B3B3B3" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#E87D3E]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Sweet Pumpkin & Perilla Leaf</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Classic Glass Perfume</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">PUMKINI (펌키니)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">50 mL</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              하얀 호박의 청초하고 달콤한 향에 차조기잎과 베르가못의 쌉싸래한 푸르름이 더해집니다. 잘 여문 호박과 진저의 스파이시함에 크리미한 코코넛 밀크가 남기는 은밀하고 오묘한 잔상.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Top:</span><span>Bergamot, Perilla Leaf</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Middle:</span><span>Pumpkin, Ginger</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Base:</span><span>Coconut Milk, Sandalwood</span></div>
+        </div>
+      </div>
+
+      <!-- ITEM 3: EVENING GLOW (EGG PERFUME 14ml) -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#ECE2E4] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-44 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 200 260" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="100" cy="240" rx="60" ry="12" fill="rgba(0,0,0,0.12)" />
+                <path d="M100,20 C145,20 175,70 175,140 C175,200 145,230 100,230 C55,230 25,200 25,140 C25,70 55,20 100,20 Z" fill="#F2E6E8" stroke="#D8C4C8" stroke-width="2" />
+                <path d="M100,20 C145,20 175,70 175,140 C175,200 145,230 100,230 C55,230 25,200 25,140 C25,70 55,20 100,20 Z" fill="url(#roseGrad)" opacity="0.35" />
+                <path d="M70,40 C110,35 150,70 150,130" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="8" stroke-linecap="round" />
+                <rect x="82" y="10" width="36" height="18" rx="4" fill="#171717" />
+                <rect x="85" y="6" width="30" height="6" rx="2" fill="#555555" />
+                <text x="100" y="150" font-family="Cormorant Garamond" font-size="14" fill="#171717" text-anchor="middle" font-weight="600" letter-spacing="2">TAMBURINS</text>
+                <text x="100" y="170" font-family="Pretendard" font-size="9" fill="#C94E6B" text-anchor="middle" letter-spacing="1">EVENING GLOW</text>
+                
+                <defs>
+                  <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F7A8B8" />
+                    <stop offset="100%" stop-color="#C94E6B" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#C94E6B]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Sunset Rose & Raspberry</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Rose Tinted Egg Perfume</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">EVENING GLOW (이브닝글로우)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">14 mL</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              모든 장미가 붉은 노을빛으로 물드는 로맨틱한 순간. 신선한 라즈베리와 레몬의 스파클링함에 신비로운 패출리와 머스크 노트가 피어나는 매혹적인 로지 앰버 향.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Top:</span><span>Lemon, Raspberry, Dill</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Middle:</span><span>Rose, Cypriol</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Base:</span><span>Patchouli, Musk</span></div>
+        </div>
+      </div>
+
+      <!-- ITEM 4: HOLY METAL (SHELL PERFUME HAND 30ml) -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#E2E8E8] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-48 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 220 240" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="110" cy="220" rx="65" ry="10" fill="rgba(0,0,0,0.12)" />
+                <path d="M40,90 C40,40 180,40 180,90 C180,170 160,200 110,200 C60,200 40,170 40,90 Z" fill="#EBF0F0" stroke="#C2CDCD" stroke-width="2" />
+                <rect x="85" y="30" width="50" height="20" rx="10" fill="#222222" />
+                <circle cx="110" cy="40" r="5" fill="#7DA1A4" />
+                <path d="M60,100 C90,120 130,120 160,100" fill="none" stroke="#D1DEDE" stroke-width="3" stroke-linecap="round" />
+                <text x="110" y="145" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="600" letter-spacing="2">TAMBURINS</text>
+                <text x="110" y="165" font-family="Pretendard" font-size="9" fill="#7DA1A4" text-anchor="middle" font-weight="600" letter-spacing="1">HOLY METAL</text>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#7DA1A4]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Icy Metal & Fresh Sage</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Sculptural Shell Hand</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">HOLY METAL (홀리메탈)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">30 mL</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              우연히 발길이 닿은 신성한 성전의 차갑고 고요한 공기. 측백나무 잎과 세이지의 깨끗함에 알데하이드 금속성 잔향이 조화를 이루는 손전용 스컬프처 쉘 핸드크림.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Top:</span><span>Cypress Leaf, Sage</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Middle:</span><span>Incense, Metallic Aldehyde</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Base:</span><span>White Musk, Cedarwood</span></div>
+        </div>
+      </div>
+
+      <!-- ITEM 5: LALE (PERFUME 50ml) -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#E6EAE4] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-40 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 200 260" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="100" cy="245" rx="55" ry="10" fill="rgba(0,0,0,0.15)" />
+                <rect x="45" y="70" width="110" height="160" rx="8" fill="rgba(255, 255, 255, 0.88)" stroke="#C8D2C5" stroke-width="2" />
+                <rect x="50" y="95" width="100" height="130" rx="4" fill="rgba(120, 160, 130, 0.2)" />
+                <rect x="60" y="110" width="80" height="70" fill="#FFFFFF" stroke="#CCCCCC" stroke-width="1" />
+                <text x="100" y="138" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="700" letter-spacing="1">TAMBURINS</text>
+                <text x="100" y="156" font-family="Pretendard" font-size="9" fill="#5A8A62" text-anchor="middle" font-weight="600" letter-spacing="1">LALE</text>
+                <text x="100" y="168" font-family="Pretendard" font-size="7" fill="#888888" text-anchor="middle">PERFUME 50mL</text>
+                <rect x="80" y="25" width="40" height="40" rx="4" fill="url(#silverGrad)" stroke="#B0B0B0" stroke-width="1" />
+                <rect x="88" y="65" width="24" height="6" fill="#777777" />
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#5A8A62]/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Green Apple & White Tulip</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Classic Glass Perfume</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">LALE (라레)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">50 mL</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              '튤립'을 의미하는 이름처럼 새벽이슬을 머금은 한 송이 백튤립과 청사과의 풋풋한 달콤함이 교차하며, 샌달우드가 잔잔하고 무게감 있게 감싸주는 은은한 프루티 플로럴.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Top:</span><span>Green Apple, Eucalyptus</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Middle:</span><span>White Tulip, Mimosa</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Base:</span><span>Sandalwood, Leather, Musk</span></div>
+        </div>
+      </div>
+
+      <!-- ITEM 6: PERFUME CANDLE -->
+      <div class="group glass-card p-6 rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-xl flex flex-col justify-between h-full border border-black/10">
+        <div>
+          <div class="relative w-full h-72 bg-[#EFECE6] rounded-xl overflow-hidden flex items-center justify-center p-6 border border-black/5">
+            <div class="relative w-44 h-56 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center">
+              <svg viewBox="0 0 200 240" class="w-full h-full drop-shadow-2xl">
+                <ellipse cx="100" cy="220" rx="60" ry="12" fill="rgba(0,0,0,0.12)" />
+                <rect x="45" y="60" width="110" height="150" rx="12" fill="#FAF8F5" stroke="#D1CCC1" stroke-width="2" />
+                <ellipse cx="100" cy="60" rx="55" ry="12" fill="#E8E3D8" stroke="#D1CCC1" stroke-width="2" />
+                <line x1="100" y1="60" x2="100" y2="42" stroke="#444444" stroke-width="2" />
+                <path d="M100,25 C105,35 103,42 100,42 C97,42 95,35 100,25 Z" fill="#E87D3E" />
+                <circle cx="100" cy="35" r="3" fill="#FFE599" />
+                <text x="100" y="140" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="600" letter-spacing="2">TAMBURINS</text>
+                <text x="100" y="160" font-family="Pretendard" font-size="9" fill="#888888" text-anchor="middle" letter-spacing="1">CANDLE OBJECT</text>
+              </svg>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#E87D3E]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none flex items-end p-4">
+              <span class="text-[11px] font-medium tracking-widest text-brandDark uppercase bg-white/90 px-3 py-1 rounded-full shadow-sm">Warm Wax & Spatial Scent</span>
+            </div>
+          </div>
+
+          <div class="mt-5">
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-[10px] tracking-widest uppercase text-brandDark/50 block font-mono">Sculptural Wax Object</span>
+                <h3 class="font-serif text-2xl text-brandDark font-medium">PERFUME CANDLE (퍼퓸 캔들)</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-brandDark text-white rounded-full">210 g</span>
+            </div>
+            <p class="text-xs text-brandDark/80 mt-3 leading-relaxed break-keep font-light">
+              공간 전체를 아늑한 향과 아티스틱한 질감으로 채워주는 캔들 컬렉션. 손으로 직접 거친 질감을 빚어낸 석고 미학 용기가 감각적인 오브제 역할을 더합니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-black/10 text-[11px] text-brandDark/70 font-mono space-y-1">
+          <div class="flex justify-between"><span class="text-black/40">Material:</span><span>Soft Soy Wax Blend</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Vessel:</span><span>Handcrafted Concrete</span></div>
+          <div class="flex justify-between"><span class="text-black/40">Burn Time:</span><span>Approx. 40 hours</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: INTERACTIVE GLITTER SCENT CANVAS -->
+  <section id="glitter" class="relative min-h-screen py-20 px-6 flex flex-col justify-center items-center bg-[#F5F4EF] border-t border-black/10 overflow-hidden">
+    
+    <div class="z-20 text-center max-w-2xl mb-8 select-none">
+      <span class="text-xs tracking-[0.4em] text-brandDark/60 uppercase block mb-2">Interactive Sparkle Canvas</span>
+      <h2 class="font-serif text-4xl md:text-5xl text-brandDark font-light tracking-tight mb-4">
+        Olfactory Twinkle & Glitter
+      </h2>
+      <p class="text-xs md:text-sm text-brandDark/70 leading-relaxed font-light break-keep">
+        마우스를 가볍게 움직이거나 화면을 클릭해 보세요.<br>
+        선택한 향수의 감성에 맞춰 <strong>눈부시게 반짝이는 글리터 별빛과 은하수 가루</strong>가 실시간으로 피어납니다.
+      </p>
+
+      <!-- Glitter Mood Controls -->
+      <div class="flex flex-wrap justify-center gap-3 mt-6">
+        <button onclick="setGlitterPalette('chamo')" class="px-4 py-1.5 text-xs rounded-full border border-black/20 hover:border-black bg-white/80 transition-all font-medium">
+          ✨ Chamo Gold
+        </button>
+        <button onclick="setGlitterPalette('pumkini')" class="px-4 py-1.5 text-xs rounded-full border border-black/20 hover:border-black bg-white/80 transition-all font-medium">
+          🎃 Pumpkin Crimson
+        </button>
+        <button onclick="setGlitterPalette('evening')" class="px-4 py-1.5 text-xs rounded-full border border-black/20 hover:border-black bg-white/80 transition-all font-medium">
+          🌹 Sunset Rose
+        </button>
+        <button onclick="setGlitterPalette('metal')" class="px-4 py-1.5 text-xs rounded-full border border-black/20 hover:border-black bg-white/80 transition-all font-medium">
+          ❄️ Ice Silver
+        </button>
+      </div>
+    </div>
+
+    <!-- Canvas Container -->
+    <div class="relative w-full max-w-6xl h-[520px] rounded-3xl bg-[#FAF9F5] border border-black/10 shadow-2xl overflow-hidden cursor-crosshair">
+      <canvas id="glitterCanvas" class="w-full h-full block"></canvas>
+      
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-none text-center">
+        <span class="text-[11px] font-mono tracking-widest text-brandDark/50 uppercase bg-white/70 px-4 py-1.5 rounded-full border border-black/5">
+          [ Move or Click Mouse for Glitter Burst ]
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-6 border-t border-black/10 bg-[#EFECE6] text-center text-xs text-brandDark/60">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="font-serif text-lg font-semibold tracking-widest text-brandDark">TAMBURINS</div>
+      <p>© 2026 TAMBURINS. Sculptural Fragrance Experience. All Rights Reserved.</p>
+      <div class="flex space-x-6 text-brandDark/80">
+        <a href="https://www.tamburins.com" target="_blank" class="hover:underline">Official Store</a>
+        <a href="#hero" class="hover:underline">Back to Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT ENGINE -->
+  <script>
+    // 1. VERIFIED TAMBURINS SCENT CONFIGURATION WITH CUSTOM SERIF FONTS & COMPACT TWO-LINE QUOTES
+    const SCENT_CONFIG = {
+      chamo: {
+        name: "CHAMO",
+        badge: "CHAMO | Amber Chamomile Mist",
+        mistColor: "rgba(227, 176, 108, ",
+        fontClass: "font-chamo",
+        quotes: [
+          "속삭이듯 스며드는 쌉싸래한 카모마일<br>온기 있는 블론드 우드의 고요한 안식",
+          "차가운 이끼의 기운을 보듬는 우디 노트<br>피부 위에 부드럽게 감기는 매혹적인 잔향",
+          "마음을 차분히 잠재우는 카모마일 약초 향<br>따스하고 부드러운 머스크의 깊은 영원"
+        ],
+        glitterColors: ['#E3B06C', '#F7D08A', '#FFF3D1', '#D4AF37', '#FFFFFF'],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full"><path d="M100,20 C145,20 175,70 175,140 C175,200 145,230 100,230 C55,230 25,200 25,140 C25,70 55,20 100,20 Z" fill="#F4F1EA" stroke="#D1CCC1" stroke-width="2"/><rect x="82" y="10" width="36" height="18" rx="4" fill="#222222"/><text x="100" y="150" font-family="Cormorant Garamond" font-size="14" fill="#171717" text-anchor="middle" font-weight="600" letter-spacing="2">TAMBURINS</text><text x="100" y="170" font-family="Pretendard" font-size="10" fill="#E3B06C" text-anchor="middle" font-weight="600">CHAMO</text></svg>`
+      },
+      pumkini: {
+        name: "PUMKINI",
+        badge: "PUMKINI | Sweet Pumpkin Crimson Mist",
+        mistColor: "rgba(232, 125, 62, ",
+        fontClass: "font-pumkini",
+        quotes: [
+          "하얀 호박의 청초하고 달콤한 첫 순간<br>차조기잎과 진저가 남기는 감각적 반전",
+          "크리미한 코코넛 밀크의 은밀한 여운<br>달빛 아래 피어나는 호박의 스윗 센트",
+          "베르가못의 쌉싸래한 푸르름과 스파이스<br>오묘하고 기분 좋은 감각의 소동"
+        ],
+        glitterColors: ['#E87D3E', '#FFAA64', '#FFE0C2', '#D96B27', '#FFFFFF'],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full"><rect x="45" y="60" width="110" height="150" rx="8" fill="rgba(255,255,255,0.9)" stroke="#C8C0B0" stroke-width="2"/><rect x="50" y="85" width="100" height="120" rx="4" fill="rgba(232, 125, 62, 0.25)"/><rect x="80" y="20" width="40" height="40" rx="4" fill="#CCCCCC" stroke="#999999"/><text x="100" y="138" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="700">TAMBURINS</text><text x="100" y="158" font-family="Pretendard" font-size="9" fill="#E87D3E" text-anchor="middle" font-weight="600">PUMKINI</text></svg>`
+      },
+      evening: {
+        name: "EVENING GLOW",
+        badge: "EVENING GLOW | Sunset Rose Mist",
+        mistColor: "rgba(201, 78, 107, ",
+        fontClass: "font-evening",
+        quotes: [
+          "붉은 노을빛으로 물드는 로맨틱한 장미<br>라즈베리와 레몬의 몽환적인 오라",
+          "해질녘의 황혼 속에서 피어나는 미학<br>패출리와 묵직한 머스크의 영원한 장미",
+          "스파클링한 과즙과 탐스러운 장미 앰버<br>피부 끝에 감도는 매혹적인 여운"
+        ],
+        glitterColors: ['#C94E6B', '#F7A8B8', '#FFD1DC', '#9B2D44', '#FFFFFF'],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full"><path d="M100,20 C145,20 175,70 175,140 C175,200 145,230 100,230 C55,230 25,200 25,140 C25,70 55,20 100,20 Z" fill="#F2E6E8" stroke="#D8C4C8" stroke-width="2"/><rect x="82" y="10" width="36" height="18" rx="4" fill="#171717"/><text x="100" y="150" font-family="Cormorant Garamond" font-size="14" fill="#171717" text-anchor="middle" font-weight="600">TAMBURINS</text><text x="100" y="170" font-family="Pretendard" font-size="9" fill="#C94E6B" text-anchor="middle" font-weight="600">EVENING GLOW</text></svg>`
+      },
+      metal: {
+        name: "HOLY METAL",
+        badge: "HOLY METAL | Ice Silver Sage Mist",
+        mistColor: "rgba(125, 161, 164, ",
+        fontClass: "font-metal",
+        quotes: [
+          "신성한 성전 속 정적과 차가운 공기<br>측백나무 잎과 세이지의 맑은 울림",
+          "차가운 알데하이드 금속성과 백머스크<br>시간이 멈춘 듯 정갈하고 깨끗한 쉘 잔향",
+          "대리석의 고요한 숨결과 신선한 세이지<br>명료하고 지적인 아이스 메탈의 기운"
+        ],
+        glitterColors: ['#7DA1A4', '#B5D5D8', '#E2F1F2', '#4A7073', '#FFFFFF'],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full"><path d="M40,90 C40,40 180,40 180,90 C180,170 160,200 110,200 C60,200 40,170 40,90 Z" fill="#EBF0F0" stroke="#C2CDCD" stroke-width="2"/><rect x="85" y="30" width="50" height="20" rx="10" fill="#222222"/><text x="110" y="145" font-family="Cormorant Garamond" font-size="13" fill="#171717" text-anchor="middle" font-weight="600">TAMBURINS</text><text x="110" y="165" font-family="Pretendard" font-size="9" fill="#7DA1A4" text-anchor="middle" font-weight="600">HOLY METAL</text></svg>`
+      }
+    };
+
+    let currentScentKey = 'chamo';
+
+    // 2. SOUND SYNTHESIZER
+    let soundEnabled = true;
+    let audioCtx = null;
+
+    document.getElementById('soundToggleBtn').addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      document.getElementById('soundIcon').innerText = soundEnabled ? '🔊' : '🔇';
+      document.getElementById('soundLabel').innerText = soundEnabled ? 'Sound On' : 'Muted';
+    });
+
+    function playSprayAudio() {
+      if (!soundEnabled) return;
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const bufferSize = audioCtx.sampleRate * 0.4;
+        const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const data = buffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          data[i] = Math.random() * 2 - 1;
+        }
+
+        const noise = audioCtx.createBufferSource();
+        noise.buffer = buffer;
+
+        const filter = audioCtx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.value = 2400;
+        filter.Q.value = 1.2;
+
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.35, audioCtx.currentTime + 0.05);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.38);
+
+        noise.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        noise.start();
+        noise.stop(audioCtx.currentTime + 0.4);
+      } catch (e) {
+        console.log("Audio not supported");
+      }
+    }
+
+    // 3. HERO COLORED MIST SPRAY ENGINE
+    const mistCanvas = document.getElementById('mistCanvas');
+    const mistCtx = mistCanvas.getContext('2d');
+    let mistParticles = [];
+
+    function resizeMistCanvas() {
+      const container = document.getElementById('sprayArea');
+      mistCanvas.width = container.clientWidth;
+      mistCanvas.height = container.clientHeight;
+    }
+    window.addEventListener('resize', resizeMistCanvas);
+    resizeMistCanvas();
+
+    class MistParticle {
+      constructor(x, y, colorBase) {
+        this.x = x;
+        this.y = y;
+        this.vx = (Math.random() - 0.5) * 4;
+        this.vy = (Math.random() - 0.5) * 4 - 1.5;
+        this.radius = Math.random() * 35 + 25;
+        this.maxRadius = this.radius + Math.random() * 50 + 40;
+        this.opacity = Math.random() * 0.6 + 0.3;
+        this.colorBase = colorBase;
+        this.life = 0;
+        this.maxLife = Math.random() * 60 + 50;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.radius += (this.maxRadius - this.radius) * 0.05;
+        this.life++;
+        this.opacity *= 0.96;
+      }
+
+      draw(ctx) {
+        if (this.opacity <= 0.01) return;
+        ctx.save();
+        const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+        grad.addColorStop(0, this.colorBase + this.opacity + ')');
+        grad.addColorStop(0.6, this.colorBase + (this.opacity * 0.4) + ')');
+        grad.addColorStop(1, this.colorBase + '0)');
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    function triggerSpray(e) {
+      const rect = mistCanvas.getBoundingClientRect();
+      const x = e ? (e.clientX - rect.left) : (mistCanvas.width / 2);
+      const y = e ? (e.clientY - rect.top) : (mistCanvas.height / 2);
+
+      const scent = SCENT_CONFIG[currentScentKey];
+
+      for (let i = 0; i < 35; i++) {
+        mistParticles.push(new MistParticle(x, y, scent.mistColor));
+      }
+
+      playSprayAudio();
+
+      const sprayArea = document.getElementById('sprayArea');
+      const textElem = document.createElement('div');
+      textElem.className = `spray-text ${scent.fontClass}`;
+      
+      const randomQuote = scent.quotes[Math.floor(Math.random() * scent.quotes.length)];
+      textElem.innerHTML = randomQuote;
+      textElem.style.left = `${x}px`;
+      textElem.style.top = `${y}px`;
+
+      sprayArea.appendChild(textElem);
+
+      setTimeout(() => {
+        textElem.remove();
+      }, 3200);
+    }
+
+    document.getElementById('sprayArea').addEventListener('click', triggerSpray);
+
+    function animateMist() {
+      mistCtx.clearRect(0, 0, mistCanvas.width, mistCanvas.height);
+
+      for (let i = mistParticles.length - 1; i >= 0; i--) {
+        const p = mistParticles[i];
+        p.update();
+        p.draw(mistCtx);
+        if (p.life >= p.maxLife || p.opacity <= 0.01) {
+          mistParticles.splice(i, 1);
+        }
+      }
+      requestAnimationFrame(animateMist);
+    }
+    animateMist();
+
+    function selectScent(scentKey) {
+      currentScentKey = scentKey;
+      const scent = SCENT_CONFIG[scentKey];
+
+      document.querySelectorAll('.scent-tab').forEach(tab => {
+        tab.classList.remove('bg-brandDark', 'text-white', 'border-brandDark');
+        tab.classList.add('border-black/20', 'text-brandDark/80', 'bg-white/60');
+      });
+
+      const activeTab = document.getElementById(`tab-${scentKey}`);
+      if (activeTab) {
+        activeTab.classList.remove('border-black/20', 'text-brandDark/80', 'bg-white/60');
+        activeTab.classList.add('bg-brandDark', 'text-white', 'border-brandDark');
+      }
+
+      document.getElementById('scentBadge').innerText = scent.badge;
+      document.getElementById('heroSvgContainer').innerHTML = scent.svg;
+
+      setGlitterPalette(scentKey);
+    }
+
+    document.getElementById('heroSvgContainer').innerHTML = SCENT_CONFIG.chamo.svg;
+
+    setInterval(() => {
+      const now = new Date();
+      const ms = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, '0');
+      const sec = String(now.getSeconds()).padStart(2, '0');
+      const min = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('timecode').innerText = `00:${min}:${sec}:${ms}`;
+    }, 40);
+
+
+    // 4. SCENT FINDER QUIZ LOGIC
+    let quizAnswers = { 1: null, 2: null, 3: null };
+
+    function answerQuiz(step, scentChoice) {
+      quizAnswers[step] = scentChoice;
+
+      if (step < 3) {
+        document.getElementById(`quizStep${step}`).classList.add('hidden');
+        const nextStep = step + 1;
+        document.getElementById(`quizStep${nextStep}`).classList.remove('hidden');
+
+        document.getElementById('stepCounter').innerText = `STEP ${nextStep} / 3`;
+        document.getElementById(`dot-${step}`).classList.replace('bg-brandDark', 'bg-black/20');
+        document.getElementById(`dot-${nextStep}`).classList.replace('bg-black/20', 'bg-brandDark');
+      } else {
+        const counts = { chamo: 0, pumkini: 0, evening: 0, metal: 0 };
+        Object.values(quizAnswers).forEach(s => { if (s) counts[s]++; });
+
+        let bestScent = 'chamo';
+        let maxCount = -1;
+        Object.keys(counts).forEach(k => {
+          if (counts[k] > maxCount) {
+            maxCount = counts[k];
+            bestScent = k;
+          }
+        });
+
+        const matchPercents = { 3: '98%', 2: '89%', 1: '76%' };
+        const percent = matchPercents[maxCount] || '85%';
+
+        const rec = SCENT_CONFIG[bestScent];
+
+        document.getElementById('quizStep3').classList.add('hidden');
+        document.getElementById('quizHeader').classList.add('hidden');
+        document.getElementById('quizResult').classList.remove('hidden');
+
+        document.getElementById('matchPercent').innerText = percent;
+        document.getElementById('resultTitle').innerText = rec.name;
+        document.getElementById('resultSvgContainer').innerHTML = rec.svg;
+        document.getElementById('resultDesc').innerText = rec.quotes[0].replace(/<br>/g, ' ');
+
+        const sprayBtn = document.getElementById('sprayMatchedBtn');
+        sprayBtn.onclick = function() {
+          selectScent(bestScent);
+          document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => { triggerSpray(null); }, 800);
+        };
+      }
+    }
+
+    function resetQuiz() {
+      quizAnswers = { 1: null, 2: null, 3: null };
+      document.getElementById('quizResult').classList.add('hidden');
+      document.getElementById('quizHeader').classList.remove('hidden');
+      document.getElementById('quizStep1').classList.remove('hidden');
+
+      document.getElementById('stepCounter').innerText = `STEP 1 / 3`;
+      document.getElementById('dot-1').className = 'w-2.5 h-2.5 rounded-full bg-brandDark transition-all';
+      document.getElementById('dot-2').className = 'w-2.5 h-2.5 rounded-full bg-black/20 transition-all';
+      document.getElementById('dot-3').className = 'w-2.5 h-2.5 rounded-full bg-black/20 transition-all';
+    }
+
+
+    // 5. AI FACE IMPRESSION MATCHING ENGINE
+    function handleFaceUpload(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const previewImg = document.getElementById('facePreviewImg');
+        previewImg.src = e.target.result;
+
+        document.getElementById('uploadPlaceholder').classList.add('hidden');
+        document.getElementById('previewContainer').classList.remove('hidden');
+        document.getElementById('scanOverlay').classList.remove('hidden');
+        document.getElementById('scanStatusBadge').classList.remove('hidden');
+        document.getElementById('reuploadBtn').classList.remove('hidden');
+        document.getElementById('analysisInitialState').classList.add('hidden');
+        document.getElementById('analysisResultContainer').classList.add('hidden');
+
+        document.getElementById('barWarmth').style.width = '0%';
+        document.getElementById('barElegance').style.width = '0%';
+        document.getElementById('barCoolness').style.width = '0%';
+
+        let progress = 0;
+        const scanTexts = [
+          "얼굴 윤곽 & 이목구비 인식 중...",
+          "피부 톤 & 아우라 온도감 분석 중...",
+          "인상 밸런스 및 분위기 추출 중...",
+          "탬버린즈 시그니처 향수 매칭 완료!"
+        ];
+
+        const scanInterval = setInterval(() => {
+          progress += 5;
+          document.getElementById('scanProgress').innerText = `${progress}%`;
+          
+          if (progress < 30) {
+            document.getElementById('scanStatusText').innerText = scanTexts[0];
+          } else if (progress < 60) {
+            document.getElementById('scanStatusText').innerText = scanTexts[1];
+          } else if (progress < 90) {
+            document.getElementById('scanStatusText').innerText = scanTexts[2];
+          } else {
+            document.getElementById('scanStatusText').innerText = scanTexts[3];
+          }
+
+          if (progress >= 100) {
+            clearInterval(scanInterval);
+            setTimeout(displayAiAnalysisResults, 300);
+          }
+        }, 60);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function displayAiAnalysisResults() {
+      document.getElementById('scanOverlay').classList.add('hidden');
+      document.getElementById('scanStatusBadge').classList.add('hidden');
+      document.getElementById('analysisResultContainer').classList.remove('hidden');
+
+      const options = ['chamo', 'pumkini', 'evening', 'metal'];
+      const chosenKey = options[Math.floor(Math.random() * options.length)];
+      const chosenScent = SCENT_CONFIG[chosenKey];
+
+      const profiles = {
+        chamo: {
+          title: "따스하고 이지적인 목조 아우라 (Warm Wood Aura)",
+          warmth: 92, elegance: 88, coolness: 45,
+          desc: "온화한 미소와 깊이 있는 이목구비. 카모마일과 블론드 우드의 차분한 CHAMO 향이 본연의 따스한 인상을 극대화해 줍니다."
+        },
+        pumkini: {
+          title: "위트 있고 은밀한 반전 아우라 (Sensual Witty Aura)",
+          warmth: 85, elegance: 74, coolness: 60,
+          desc: "매력적인 눈매와 독창적인 분위기. 달콤한 단호박과 스파이시 진저의 PUMKINI 향이 감각적인 개성을 한층 살려줍니다."
+        },
+        evening: {
+          title: "화려하고 몽환적인 노을빛 아우라 (Sunset Rosy Aura)",
+          warmth: 78, elegance: 95, coolness: 52,
+          desc: "선이 고운 화려함과 로맨틱한 분위기. 라즈베리와 붉은 장미 앰버의 EVENING GLOW 향이 당당하고 우아한 잔상을 완성합니다."
+        },
+        metal: {
+          title: "맑고 차가운 고요함의 아우라 (Icy Sage Modernity)",
+          warmth: 40, elegance: 82, coolness: 96,
+          desc: "세련되고 지적인 라인과 대리석처럼 정갈한 인상. HOLY METAL의 차가운 금속성과 세이지 향이 명료한 분위기를 더해줍니다."
+        }
+      };
+
+      const prof = profiles[chosenKey];
+      document.getElementById('faceImpressionTitle').innerText = prof.title;
+      document.getElementById('scoreWarmth').innerText = prof.warmth + '%';
+      document.getElementById('scoreElegance').innerText = prof.elegance + '%';
+      document.getElementById('scoreCoolness').innerText = prof.coolness + '%';
+
+      setTimeout(() => {
+        document.getElementById('barWarmth').style.width = prof.warmth + '%';
+        document.getElementById('barElegance').style.width = prof.elegance + '%';
+        document.getElementById('barCoolness').style.width = prof.coolness + '%';
+      }, 100);
+
+      document.getElementById('aiScentName').innerText = chosenScent.name;
+      document.getElementById('aiScentDesc').innerText = prof.desc;
+      document.getElementById('aiScentSvg').innerHTML = chosenScent.svg;
+
+      const aiSprayBtn = document.getElementById('aiSprayBtn');
+      aiSprayBtn.onclick = function() {
+        selectScent(chosenKey);
+        document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => { triggerSpray(null); }, 800);
+      };
+    }
+
+    const dropzone = document.getElementById('uploadDropzone');
+    if (dropzone) {
+      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => { e.preventDefault(); e.stopPropagation(); }, false);
+      });
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, () => dropzone.classList.add('border-brandDark'), false);
+      });
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, () => dropzone.classList.remove('border-brandDark'), false);
+      });
+      dropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files && files.length > 0) {
+          handleFaceUpload({ target: { files: files } });
+        }
+      }, false);
+    }
+
+
+    // 6. INTERACTIVE SPARKLE & GLITTER CANVAS ENGINE
+    const glitterCanvas = document.getElementById('glitterCanvas');
+    const gCtx = glitterCanvas.getContext('2d');
+    let glitterParticles = [];
+    let currentGlitterColors = SCENT_CONFIG.chamo.glitterColors;
+
+    function resizeGlitterCanvas() {
+      if (!glitterCanvas.parentElement) return;
+      glitterCanvas.width = glitterCanvas.parentElement.clientWidth;
+      glitterCanvas.height = glitterCanvas.parentElement.clientHeight;
+    }
+    window.addEventListener('resize', resizeGlitterCanvas);
+    resizeGlitterCanvas();
+
+    class GlitterStar {
+      constructor(x, y, colors, isBurst = false) {
+        this.x = x;
+        this.y = y;
+        const speedMultiplier = isBurst ? 4.5 : 1.5;
+        this.vx = (Math.random() - 0.5) * speedMultiplier;
+        this.vy = (Math.random() - 0.5) * speedMultiplier - 0.5;
+        this.size = Math.random() * 8 + 3;
+        this.color = colors[Math.floor(Math.random() * colors.length)];
+        this.rotation = Math.random() * Math.PI * 2;
+        this.vRot = (Math.random() - 0.5) * 0.1;
+        this.alpha = 1;
+        this.decay = Math.random() * 0.02 + 0.01;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.rotation += this.vRot;
+        this.alpha -= this.decay;
+      }
+
+      draw(ctx) {
+        if (this.alpha <= 0) return;
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.globalAlpha = Math.max(0, this.alpha);
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
+
+        ctx.beginPath();
+        const s = this.size;
+        ctx.moveTo(0, -s);
+        ctx.quadraticCurveTo(0, 0, s, 0);
+        ctx.quadraticCurveTo(0, 0, 0, s);
+        ctx.quadraticCurveTo(0, 0, -s, 0);
+        ctx.quadraticCurveTo(0, 0, 0, -s);
+        ctx.fill();
+
+        ctx.restore();
+      }
+    }
+
+    glitterCanvas.parentElement.addEventListener('mousemove', (e) => {
+      const rect = glitterCanvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      for (let i = 0; i < 3; i++) {
+        glitterParticles.push(new GlitterStar(x, y, currentGlitterColors, false));
+      }
+    });
+
+    glitterCanvas.parentElement.addEventListener('click', (e) => {
+      const rect = glitterCanvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      for (let i = 0; i < 40; i++) {
+        glitterParticles.push(new GlitterStar(x, y, currentGlitterColors, true));
+      }
+    });
+
+    function setGlitterPalette(key) {
+      if (SCENT_CONFIG[key]) {
+        currentGlitterColors = SCENT_CONFIG[key].glitterColors;
+      }
+    }
+
+    function animateGlitter() {
+      gCtx.clearRect(0, 0, glitterCanvas.width, glitterCanvas.height);
+
+      for (let i = glitterParticles.length - 1; i >= 0; i--) {
+        const gp = glitterParticles[i];
+        gp.update();
+        gp.draw(gCtx);
+        if (gp.alpha <= 0) {
+          glitterParticles.splice(i, 1);
+        }
+      }
+      requestAnimationFrame(animateGlitter);
+    }
+    animateGlitter();
+  </script>
+</body>
+</html>
